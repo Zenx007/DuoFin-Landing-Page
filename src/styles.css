@@ -16,6 +16,8 @@
   --on-surface: #141b2b;
   --on-surface-variant: #4a4455;
   --outline: #ccc3d7;
+  --soft-divider: rgba(204, 195, 215, 0.16);
+  --card-outline: rgba(204, 195, 215, 0.24);
   --success: #0f9d70;
   --danger: #df4d64;
   --shadow-purple: 0 22px 70px rgba(83, 0, 183, 0.14);
@@ -57,6 +59,8 @@ button:disabled {
 .site-shell {
   min-height: 100vh;
   overflow-x: hidden;
+  background:
+    linear-gradient(180deg, var(--surface-lowest) 0%, var(--surface) 48%, var(--surface-lowest) 100%);
 }
 
 .container {
@@ -608,11 +612,13 @@ button:disabled {
 }
 
 .section {
+  position: relative;
   padding: 110px 0;
 }
 
 .section-white {
-  background: var(--surface-lowest);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, #fff 48%, rgba(249, 249, 255, 0.78) 100%);
 }
 
 .section-heading {
@@ -640,22 +646,38 @@ button:disabled {
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 22px;
+  align-items: start;
 }
 
 .feature-card {
   min-height: 238px;
   padding: 26px;
-  border: 1px solid var(--surface-container);
+  border: 1px solid var(--card-outline);
   border-radius: 16px;
-  background: #fff;
-  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(249, 249, 255, 0.68));
+  box-shadow:
+    0 18px 46px rgba(20, 27, 43, 0.045),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.feature-card:nth-child(2),
+.feature-card:nth-child(4) {
+  margin-top: 18px;
+}
+
+.feature-card:nth-child(3) {
+  margin-top: 8px;
 }
 
 .feature-card:hover {
   transform: translateY(-4px);
-  border-color: #d3bbff;
-  box-shadow: 0 16px 40px rgba(109, 40, 217, 0.08);
+  border-color: rgba(156, 72, 234, 0.28);
+  background:
+    linear-gradient(145deg, #fff, rgba(249, 249, 255, 0.82));
+  box-shadow: 0 22px 54px rgba(109, 40, 217, 0.08);
 }
 
 .feature-card h3,
@@ -676,7 +698,8 @@ button:disabled {
 }
 
 .flow-section {
-  background: var(--surface);
+  background:
+    linear-gradient(180deg, rgba(249, 249, 255, 0.3) 0%, var(--surface) 18%, var(--surface) 82%, rgba(255, 255, 255, 0.92) 100%);
 }
 
 .flow-grid {
@@ -696,10 +719,12 @@ button:disabled {
   aspect-ratio: 440 / 956;
   margin: 0;
   overflow: hidden;
-  border: 1px solid rgba(204, 195, 215, 0.65);
+  border: 1px solid rgba(204, 195, 215, 0.28);
   border-radius: 18px;
   background: #fff;
-  box-shadow: 0 14px 38px rgba(20, 27, 43, 0.1);
+  box-shadow:
+    0 18px 44px rgba(20, 27, 43, 0.08),
+    0 0 0 6px rgba(255, 255, 255, 0.45);
 }
 
 .flow-phone img {
@@ -905,7 +930,17 @@ button:disabled {
 }
 
 .app-screens-section {
-  border-top: 1px solid rgba(204, 195, 215, 0.35);
+  border-top: 0;
+}
+
+.app-screens-section::before,
+.proof-section::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 72px;
+  pointer-events: none;
+  background: linear-gradient(180deg, var(--soft-divider), rgba(204, 195, 215, 0));
 }
 
 .app-screen-grid {
@@ -917,10 +952,13 @@ button:disabled {
 
 .app-screen-card {
   padding: 18px;
-  border: 1px solid var(--surface-container);
+  border: 1px solid var(--card-outline);
   border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 14px 42px rgba(83, 0, 183, 0.07);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(249, 249, 255, 0.72));
+  box-shadow:
+    0 22px 58px rgba(83, 0, 183, 0.075),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .app-screen-card:nth-child(2) {
@@ -954,7 +992,7 @@ button:disabled {
 }
 
 .proof-section {
-  border-top: 1px solid rgba(204, 195, 215, 0.35);
+  border-top: 0;
 }
 
 .proof-container {
@@ -1062,8 +1100,9 @@ blockquote {
 
 .footer {
   padding: 42px 0;
-  border-top: 1px solid #e5e7eb;
-  background: #f8fafc;
+  border-top: 1px solid rgba(204, 195, 215, 0.18);
+  background:
+    linear-gradient(180deg, rgba(249, 249, 255, 0.82), #f8fafc);
 }
 
 .footer-content {
@@ -1107,6 +1146,12 @@ blockquote {
 
   .app-screen-card:nth-child(2),
   .app-screen-card:nth-child(3) {
+    margin-top: 0;
+  }
+
+  .feature-card:nth-child(2),
+  .feature-card:nth-child(3),
+  .feature-card:nth-child(4) {
     margin-top: 0;
   }
 

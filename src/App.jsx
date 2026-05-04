@@ -26,66 +26,66 @@ const features = [
   },
   {
     icon: ArrowRightLeft,
-    title: 'Divisao de Gastos',
-    text: 'Dividam contas fixas e variaveis de forma automatica e justa, sem precisar manter planilhas paralelas.',
+    title: 'Divisão de Gastos',
+    text: 'Dividam contas fixas e variáveis de forma automática e justa, sem precisar manter planilhas paralelas.',
   },
   {
     icon: CreditCard,
-    title: 'Gestao Transparente',
-    text: 'Acompanhem cartoes individuais e compartilhados em uma visao unica do orcamento domestico.',
+    title: 'Gestão Transparente',
+    text: 'Acompanhem cartões individuais e compartilhados em uma visão única do orçamento doméstico.',
   },
   {
     icon: Shield,
     title: 'Sincronia Total',
-    text: 'Recebam alertas para ambos sempre que houver uma movimentacao importante nas financas do par.',
+    text: 'Recebam alertas para ambos sempre que houver uma movimentação importante nas finanças do par.',
   },
 ];
 
 const flowSteps = [
   {
     title: 'Cadastro em Dupla',
-    text: 'Vinculem as contas de forma rapida e segura para comecar a planejar juntos.',
+    text: 'Vinculem as contas de forma rápida e segura para começar a planejar juntos.',
     image: '/screens/convite-duo.png',
     alt: 'Tela de convite do parceiro no DuoFin',
   },
   {
-    title: 'Divisao Inteligente',
+    title: 'Divisão Inteligente',
     text: 'Definam como cada um contribui para as despesas comuns com apenas alguns toques.',
     image: '/screens/divisao-gastos.png',
-    alt: 'Tela de divisao de gastos do DuoFin',
+    alt: 'Tela de divisão de gastos do DuoFin',
   },
   {
     title: 'Acerto de Contas',
-    text: 'Uma visao clara de quem gastou o que e quanto falta para atingir as metas do mes.',
+    text: 'Uma visão clara de quem gastou o que e quanto falta para atingir as metas do mês.',
     image: '/screens/acerto-contas.png',
     alt: 'Tela de acerto de contas do DuoFin',
   },
   {
     title: 'Futuro em Harmonia',
-    text: 'Acompanhem o crescimento do patrimonio do casal com relatorios e projecoes.',
+    text: 'Acompanhem o crescimento do patrimônio do casal com relatórios e projeções.',
     image: '/screens/conexao-bem-sucedida.png',
-    alt: 'Tela de conexao bem-sucedida do DuoFin',
+    alt: 'Tela de conexão bem-sucedida do DuoFin',
   },
 ];
 
 const appScreens = [
   {
     title: 'Receitas em segundos',
-    text: 'Registre entradas, anexos, repeticoes e conta de destino em uma tela objetiva.',
+    text: 'Registre entradas, anexos, repetições e conta de destino em uma tela objetiva.',
     image: '/screens/criar-receita.png',
     alt: 'Tela de criar receita do DuoFin',
   },
   {
-    title: 'Transacoes claras',
-    text: 'Acompanhe receitas, despesas e lancamentos do casal com filtros por periodo.',
+    title: 'Transações claras',
+    text: 'Acompanhe receitas, despesas e lançamentos do casal com filtros por período.',
     image: '/screens/transacoes.png',
-    alt: 'Tela de transacoes do DuoFin',
+    alt: 'Tela de transações do DuoFin',
   },
   {
-    title: 'Relatorios completos',
-    text: 'Veja balanco, evolucao patrimonial, objetivos e maiores gastos em uma visao consolidada do casal.',
+    title: 'Relatórios completos',
+    text: 'Veja balanço, evolução patrimonial, objetivos e maiores gastos em uma visão consolidada do casal.',
     image: '/screens/relatorios.png',
-    alt: 'Tela de relatorios do DuoFin',
+    alt: 'Tela de relatórios do DuoFin',
   },
 ];
 
@@ -109,7 +109,7 @@ function App() {
 function Header() {
   return (
     <header className="topbar">
-      <nav className="nav container" aria-label="Navegacao principal">
+      <nav className="nav container" aria-label="Navegação principal">
         <a className="brand" href="#top" aria-label="DuoFin">
           <span className="brand-mark">
             <WalletMinimal size={18} strokeWidth={2.5} />
@@ -142,7 +142,7 @@ function Hero() {
         <div className="hero-copy">
           <div className="eyebrow">
             <span className="status-dot" />
-            Novo: Cartoes virtuais ilimitados
+            Novo: Cartões virtuais ilimitados
           </div>
 
           <h1>
@@ -158,7 +158,7 @@ function Hero() {
           <div className="hero-actions">
             <button className="btn btn-primary" type="button" disabled>
               <CheckCircle2 size={18} />
-              Disponivel em breve
+              Disponível em breve
             </button>
           </div>
 
@@ -173,7 +173,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="Previa do aplicativo DuoFin">
+        <div className="hero-visual" aria-label="Prévia do aplicativo DuoFin">
           <PhoneScreenshot
             className="hero-screenshot"
             src="/screens/inicio.png"
@@ -184,7 +184,7 @@ function Hero() {
               <Banknote size={21} />
             </span>
             <div>
-              <small>Transferencia rapida</small>
+              <small>Transferência rápida</small>
               <strong>R$ 450,00</strong>
             </div>
           </div>
@@ -214,7 +214,7 @@ function HeroPhone() {
       <div className="phone-speaker" />
       <div className="app-header">
         <div>
-          <small>Patrimonio liquido</small>
+          <small>Patrimônio líquido</small>
           <strong>R$ 55.592,39</strong>
         </div>
         <div className="mini-people">
@@ -231,7 +231,7 @@ function HeroPhone() {
       <div className="goal-panel">
         <div className="goal-title">
           <Target size={17} />
-          <span>Orcamento mensal</span>
+          <span>Orçamento mensal</span>
           <strong>63%</strong>
         </div>
         <div className="progress-bar">
@@ -262,7 +262,7 @@ function HeroPhone() {
       <div className="transactions">
         <Transaction name="Mercado" value="-R$ 435,00" />
         <Transaction name="Streaming" value="-R$ 79,90" />
-        <Transaction name="Salario" value="+R$ 4.950,98" positive />
+        <Transaction name="Salário" value="+R$ 4.950,98" positive />
       </div>
     </div>
   );
@@ -273,7 +273,7 @@ function Metric({ label, value, positive }) {
     <div className="metric-card">
       <span>{label}</span>
       <strong className={positive ? 'positive' : ''}>{value}</strong>
-      <small>3 transacoes</small>
+      <small>3 transações</small>
     </div>
   );
 }
@@ -303,9 +303,9 @@ function Features() {
     <section className="section section-white" id="features">
       <div className="container">
         <SectionHeading
-          title="Tudo que voce precisa,"
-          highlight="na palma da mao."
-          text="Nossos recursos foram desenhados para dar controle total ao casal, com seguranca, clareza e rapidez para decidir juntos."
+          title="Tudo que você precisa,"
+          highlight="na palma da mão."
+          text="Nossos recursos foram desenhados para dar controle total ao casal, com segurança, clareza e rapidez para decidir juntos."
         />
 
         <div className="feature-grid">
@@ -331,7 +331,7 @@ function HowItWorks() {
         <SectionHeading
           title="Seu fluxo financeiro"
           highlight="simples e direto."
-          text="Do cadastro ao acompanhamento mensal, tudo foi pensado para ser rapido, seguro e facil de revisar a dois."
+          text="Do cadastro ao acompanhamento mensal, tudo foi pensado para ser rápido, seguro e fácil de revisar a dois."
         />
 
         <div className="flow-grid">
@@ -386,11 +386,11 @@ function ConnectScreen() {
 function SplitScreen() {
   return (
     <>
-      <span className="screen-label">Divisao de gastos</span>
-      <strong>Qual e a regra padrao?</strong>
+      <span className="screen-label">Divisão de gastos</span>
+      <strong>Qual é a regra padrão?</strong>
       <div className="option-list">
         <span>Igual 50/50</span>
-        <span>Proporcional a renda</span>
+        <span>Proporcional à renda</span>
         <span>Percentual personalizado</span>
       </div>
       <div className="couple-row">
@@ -431,9 +431,9 @@ function FutureScreen() {
         <HeartHandshake size={54} />
         <PieChart size={30} />
       </div>
-      <strong>Agora voces estao conectados!</strong>
+      <strong>Agora vocês estão conectados!</strong>
       <p>Bom-vindos ao DuoFin Pro.</p>
-      <div className="screen-button">Vamos la</div>
+      <div className="screen-button">Vamos lá</div>
     </>
   );
 }
@@ -445,7 +445,7 @@ function AppScreens() {
         <SectionHeading
           title="O app do DuoFin"
           highlight="organiza a vida financeira do casal."
-          text="Receitas, transacoes e relatorios ficam reunidos em uma experiencia simples para acompanhar o dinheiro, revisar decisoes e planejar juntos."
+          text="Receitas, transações e relatórios ficam reunidos em uma experiência simples para acompanhar o dinheiro, revisar decisões e planejar juntos."
         />
 
         <div className="app-screen-grid">
@@ -473,7 +473,7 @@ function Testimonials() {
         <p className="kicker">Confiado por quem entende de dinheiro</p>
         <blockquote>
           "O DuoFin mudou a maneira como eu e meu parceiro lidamos com nossas
-          financas. Acabaram as discussoes sobre contas e agora focamos nos
+          finanças. Acabaram as discussões sobre contas e agora focamos nos
           nossos sonhos."
         </blockquote>
 
@@ -485,13 +485,13 @@ function Testimonials() {
           />
           <div>
             <strong>Marina & Lucas</strong>
-            <span>Usuarios Beta | Financas Compartilhadas</span>
+            <span>Usuários Beta | Finanças Compartilhadas</span>
           </div>
         </div>
 
         <div className="trust-row" id="seguranca">
           <span>
-            <ShieldCheck size={18} /> Seguranca 100%
+            <ShieldCheck size={18} /> Segurança 100%
           </span>
           <span>
             <LockKeyhole size={18} /> Dados protegidos
@@ -510,14 +510,14 @@ function FinalCta() {
     <section className="final-cta">
       <div className="cta-pattern" />
       <div className="container cta-content">
-        <h2>Prontos para harmonizar as financas do casal?</h2>
+        <h2>Prontos para harmonizar as finanças do casal?</h2>
         <p>
-          O DuoFin esta chegando para simplificar sua vida. Entre na lista de
+          O DuoFin está chegando para simplificar sua vida. Entre na lista de
           espera para receber acesso antecipado.
         </p>
         <button className="btn btn-inverted" type="button" disabled>
           <CheckCircle2 size={18} />
-          Disponivel em breve
+          Disponível em breve
         </button>
       </div>
     </section>
@@ -543,7 +543,7 @@ function Footer() {
           <WalletCards size={16} />
           DuoFin
         </a>
-        <p>(c) 2026 DuoFin. Precisao em cada decisao.</p>
+        <p>(c) 2026 DuoFin. Precisão em cada decisão.</p>
       </div>
     </footer>
   );
