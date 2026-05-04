@@ -6,7 +6,6 @@ import {
   CreditCard,
   Goal,
   HeartHandshake,
-  Landmark,
   LockKeyhole,
   Menu,
   PieChart,
@@ -46,22 +45,41 @@ const flowSteps = [
   {
     title: 'Cadastro em Dupla',
     text: 'Vinculem as contas de forma rapida e segura para comecar a planejar juntos.',
-    variant: 'connect',
+    image: '/screens/convite-duo.png',
+    alt: 'Tela de convite do parceiro no DuoFin',
   },
   {
     title: 'Divisao Inteligente',
     text: 'Definam como cada um contribui para as despesas comuns com apenas alguns toques.',
-    variant: 'split',
+    image: '/screens/divisao-gastos.png',
+    alt: 'Tela de divisao de gastos do DuoFin',
   },
   {
-    title: 'Dashboard do Casal',
+    title: 'Acerto de Contas',
     text: 'Uma visao clara de quem gastou o que e quanto falta para atingir as metas do mes.',
-    variant: 'dashboard',
+    image: '/screens/acerto-contas.png',
+    alt: 'Tela de acerto de contas do DuoFin',
   },
   {
     title: 'Futuro em Harmonia',
     text: 'Acompanhem o crescimento do patrimonio do casal com relatorios e projecoes.',
-    variant: 'future',
+    image: '/screens/conexao-bem-sucedida.png',
+    alt: 'Tela de conexao bem-sucedida do DuoFin',
+  },
+];
+
+const appScreens = [
+  {
+    title: 'Receitas em segundos',
+    text: 'Registre entradas, anexos, repeticoes e conta de destino em uma tela objetiva.',
+    image: '/screens/criar-receita.png',
+    alt: 'Tela de criar receita do DuoFin',
+  },
+  {
+    title: 'Transacoes claras',
+    text: 'Acompanhe receitas, despesas e lancamentos do casal com filtros por periodo.',
+    image: '/screens/transacoes.png',
+    alt: 'Tela de transacoes do DuoFin',
   },
 ];
 
@@ -73,6 +91,7 @@ function App() {
         <Hero />
         <Features />
         <HowItWorks />
+        <AppScreens />
         <Testimonials />
         <FinalCta />
       </main>
@@ -96,7 +115,6 @@ function Header() {
           <a href="#features">Recursos</a>
           <a href="#como-funciona">Como funciona</a>
           <a href="#depoimentos">Depoimentos</a>
-          <a href="#seguranca">Seguranca</a>
         </div>
 
         <button className="btn btn-primary btn-small" type="button" disabled>
@@ -150,7 +168,11 @@ function Hero() {
         </div>
 
         <div className="hero-visual" aria-label="Previa do aplicativo DuoFin">
-          <HeroPhone />
+          <PhoneScreenshot
+            className="hero-screenshot"
+            src="/screens/inicio.png"
+            alt="Tela inicial do aplicativo DuoFin"
+          />
           <div className="floating-card floating-left">
             <span className="float-icon">
               <Banknote size={21} />
@@ -169,6 +191,14 @@ function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function PhoneScreenshot({ src, alt, className = '' }) {
+  return (
+    <figure className={`screenshot-frame ${className}`}>
+      <img src={src} alt={alt} />
+    </figure>
   );
 }
 
@@ -305,7 +335,7 @@ function HowItWorks() {
               style={{ '--step-offset': `${index * 28}px` }}
               key={step.title}
             >
-              <MiniPhone number={index + 1} variant={step.variant} />
+              <MiniPhone number={index + 1} image={step.image} alt={step.alt} />
               <h3>{step.title}</h3>
               <p>{step.text}</p>
             </article>
@@ -316,15 +346,12 @@ function HowItWorks() {
   );
 }
 
-function MiniPhone({ number, variant }) {
+function MiniPhone({ number, image, alt }) {
   return (
-    <div className={`mini-phone mini-${variant}`}>
+    <figure className="flow-phone">
       <span className="step-number">{number}</span>
-      {variant === 'connect' && <ConnectScreen />}
-      {variant === 'split' && <SplitScreen />}
-      {variant === 'dashboard' && <DashboardScreen />}
-      {variant === 'future' && <FutureScreen />}
-    </div>
+      <img src={image} alt={alt} />
+    </figure>
   );
 }
 
@@ -405,6 +432,34 @@ function FutureScreen() {
   );
 }
 
+function AppScreens() {
+  return (
+    <section className="section section-white app-screens-section" id="telas">
+      <div className="container">
+        <SectionHeading
+          title="As telas reais do DuoFin,"
+          highlight="sem abstrair o produto."
+          text="A landing agora mostra a experiencia original do app, com capturas que revelam como cada tarefa aparece para o casal."
+        />
+
+        <div className="app-screen-grid">
+          {appScreens.map((screen) => (
+            <article className="app-screen-card" key={screen.title}>
+              <PhoneScreenshot
+                className="app-screen-shot"
+                src={screen.image}
+                alt={screen.alt}
+              />
+              <h3>{screen.title}</h3>
+              <p>{screen.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Testimonials() {
   return (
     <section className="section section-white proof-section" id="depoimentos">
@@ -417,7 +472,11 @@ function Testimonials() {
         </blockquote>
 
         <div className="testimonial-author">
-          <span className="avatar avatar-a">M</span>
+          <img
+            className="testimonial-photo"
+            src="/images/testimonial-couple.jpg"
+            alt="Marina e Lucas sorrindo juntos"
+          />
           <div>
             <strong>Marina & Lucas</strong>
             <span>Usuarios Beta | Financas Compartilhadas</span>
@@ -478,12 +537,6 @@ function Footer() {
           <WalletCards size={16} />
           DuoFin
         </a>
-        <div className="footer-links">
-          <a href="#top">Privacidade</a>
-          <a href="#top">Termos</a>
-          <a href="#seguranca">Seguranca</a>
-          <a href="#top">Contato</a>
-        </div>
         <p>(c) 2026 DuoFin. Precisao em cada decisao.</p>
       </div>
     </footer>
