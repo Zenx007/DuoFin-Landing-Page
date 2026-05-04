@@ -81,6 +81,12 @@ const appScreens = [
     image: '/screens/transacoes.png',
     alt: 'Tela de transacoes do DuoFin',
   },
+  {
+    title: 'Relatorios completos',
+    text: 'Veja balanco, evolucao patrimonial, objetivos e maiores gastos em uma visao consolidada do casal.',
+    image: '/screens/relatorios.png',
+    alt: 'Tela de relatorios do DuoFin',
+  },
 ];
 
 function App() {
@@ -437,9 +443,9 @@ function AppScreens() {
     <section className="section section-white app-screens-section" id="telas">
       <div className="container">
         <SectionHeading
-          title="As telas reais do DuoFin,"
-          highlight="sem abstrair o produto."
-          text="A landing agora mostra a experiencia original do app, com capturas que revelam como cada tarefa aparece para o casal."
+          title="O app do DuoFin"
+          highlight="organiza a vida financeira do casal."
+          text="Receitas, transacoes e relatorios ficam reunidos em uma experiencia simples para acompanhar o dinheiro, revisar decisoes e planejar juntos."
         />
 
         <div className="app-screen-grid">
