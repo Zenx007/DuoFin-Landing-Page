@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Editor and system files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test and coverage output
+coverage/
+.nyc_output/
+
+# Vite and tool caches
+.vite/
+.cache/
+
+# Local permission/debug artifacts
+.permission-test
+.patch-test
+write-test.txt
